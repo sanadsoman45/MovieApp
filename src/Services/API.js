@@ -1,4 +1,4 @@
-import { API_KEY, BASE_URL } from "../../Utils/Config"
+import { API_KEY, BASE_URL } from "../Utils/Config"
 import axios from 'axios';
 
 export const getData = (url)=>{

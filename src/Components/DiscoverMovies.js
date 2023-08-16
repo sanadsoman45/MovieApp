@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {getData} from '../Services/API';
-import {IMAGE_POSTER_URL} from '../../Utils/Config';
+import {IMAGE_POSTER_URL} from '../Utils/Config';
 import {SliderBox} from 'react-native-image-slider-box';
 import {Colors} from '../Utils/Colors';
 
