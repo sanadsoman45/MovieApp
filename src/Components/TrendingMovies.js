@@ -6,13 +6,16 @@ import Loader from './Loader';
 import {getData} from '../Services/API';
 
 const TrendingMovies = props => {
+  i=0;
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState();
 
   useEffect(() => {
+
     getData(props.url).then(response => {
       setMovies(response.results);
       setLoading(false);
+      
     });
   }, []);
 
@@ -37,14 +40,15 @@ const TrendingMovies = props => {
 };
 
 const displayMovies = ({item},props) => {
-    
+    // console.log(props)
   return (
-    <TouchableOpacity onPress={()=>{props.navigation.navigate('movieDetails', {movieid:item.id})}}>
+    <TouchableOpacity onPress={()=>{props.navigation.push('movieDetails', {movieid:item.id})}}>
        <Image
         source={{uri: `${POSTER_IMAGE}${item.poster_path}`}}
         style={trendingMovies.posterImage}
       />
       <Text style={trendingMovies.movieTitle}>{item.title}</Text>
+      
     </TouchableOpacity>
   );
 };

@@ -128,6 +128,12 @@ export const movieDetailsStyle = StyleSheet.create({
         color: Colors.textColor,
         fontSize: 16,
       },
+      overview: {
+        color: Colors.textColor,
+        marginHorizontal: 10,
+        textAlign: 'justify',
+        fontSize: 16,
+      },
 })
 
 export default appStyle;

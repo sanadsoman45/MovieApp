@@ -11,7 +11,7 @@ const TrendingPeople = (props) => {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    getData('trending/person/week')
+    getData(props.url)
       .then(response => {
         setPeople(props.isForPage === 'details' ? response.cast : response.results);
         setLoading(false);
@@ -39,14 +39,18 @@ const TrendingPeople = (props) => {
 };
 
 const displayPeople = ({item}) => {
+ 
   return (
-    <View style={trendingPeopleStyles.trendingPeopleContainer}>
+    <View  style={trendingPeopleStyles.trendingPeopleContainer}>
       <Image
         style={trendingPeopleStyles.trendingPeopleImage}
         source={{uri: `${IMAGE_POSTER_URL}${item.profile_path}`}}
       />
       <Text style={trendingPeopleStyles.trendingPeopleName}>{item.name}</Text>
+     
+    
     </View>
+   
   );
 };
 
